@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES6",                       // Chrome supports ES6+
-    "module": "ESNext",                    // or "ESNext" or "ES2020"
+    "target": "ES6",                       // Chrome supports ES6+                  
     "moduleResolution": "node",
-    "outDir": "dist",                      // where compiled JS goes
     "strict": true,                        // enable all strict type-checking options
     "esModuleInterop": true,               // allow default import syntax with CommonJS
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "sourceMap": true,                     // helpful for debugging in DevTools
+    "sourceMap": true,                     // helpful for debugging in DevTools. We can leave this enabled. It doesn't hurt.
     "declaration": false,                  // optional: no .d.ts files generated
     "types": ["chrome"]
 },
