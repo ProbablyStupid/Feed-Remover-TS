@@ -9,3 +9,6 @@
 [ ] Reddit
 [ ] Tik Tok
 [ ] LinkedIn
+
+### Misc
+[ ] Make custom logo for Feed Remover TS
