@@ -6,6 +6,7 @@
 
 import * as settingsManagement from "./util/settings-management";
 import * as sites from "./sites/site-manager";
+import { site_list } from "./sites/site-list";
 
 // get settings
 
@@ -22,9 +23,9 @@ settingsManagement.getSiteSettings().then((value) => checkSite(value));
 function checkSite(settings: settingsManagement.siteSettings) {
     const url: string = window.location.href;
 
-    for (const site of sites.site_list) {
-        if (site.checkSite(url)) {
-            // TODO: implement logic for site settings
+    for (const site of site_list) {
+        if (site.checkSite(url) && settings[site.siteKey]) {
+            site.eradicate(document);
         }
     }
 

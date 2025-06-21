@@ -1,17 +1,14 @@
 import * as youtube from "./youtube";
-
-export const site_list: Site[] = [
-    new youtube.Youtube(),
-];
+import type {siteSettings} from "../util/settings-management";
 
 export abstract class Site {
 
     abstract checkSite(url: string): boolean;
 
-    abstract eradicate(dom: Document, enabled: boolean): void;
+    abstract eradicate(dom: Document): void;
 
     /**
      * The siteKey needs to match with the key in src/util/settings-management's siteSettings interface.
      */
-    abstract siteKey: string;
+    abstract siteKey: keyof siteSettings;
 }

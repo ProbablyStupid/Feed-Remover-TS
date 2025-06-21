@@ -1,5 +1,6 @@
 import * as sm from "./site-manager";
 import * as eradicator from "./eradicator";
+import type {siteSettings} from "../util/settings-management";
 
 export class Youtube extends sm.Site {
 
@@ -9,11 +10,11 @@ export class Youtube extends sm.Site {
         return url.includes(urlpattern);
     }
 
-    eradicate(dom: Document, enabled: boolean): void {
+    eradicate(dom: Document): void {
         const tag_name: string = "ytd-rich-grid-renderer";
 
         eradicator.eradicate_tag_name(tag_name, dom);
     }
 
-    siteKey = "youtube";
+    siteKey: keyof siteSettings = 'youtube';
 }
