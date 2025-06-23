@@ -3,6 +3,8 @@
 
 - [ ] Don't use all urls in manifest.json!
 
+- [ ] Make debug.ts nicer (not output "Array (2)").
+
 ### Sites
 - [ ] Meta Threads
 - [ ] Instagram
