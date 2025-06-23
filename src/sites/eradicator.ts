@@ -1,8 +1,12 @@
+import { debug } from "../util/debug";
+
 export function eradicate_tag_name(tag_name: string, dom: Document) {
     var tags = dom.getElementsByTagName(tag_name);
     
     Array.from(tags).forEach((element) => {
+        debug('Removing... : ', element);
         element.remove();
+        debug('removed!');
     });
 
     const observer = new MutationObserver((mutations) => {
@@ -20,4 +24,5 @@ export function eradicate_tag_name(tag_name: string, dom: Document) {
     });
 
     observer.observe(dom.body, {childList: true, subtree: true});
+    debug('eradicate_by_tag_name finished!');
 }

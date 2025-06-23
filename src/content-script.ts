@@ -7,6 +7,7 @@
 import * as settingsManagement from "./util/settings-management";
 import * as sites from "./sites/site-manager";
 import { site_list } from "./sites/site-list";
+import { debug } from "./util/debug";
 
 // get settings
 
@@ -21,10 +22,13 @@ settingsManagement.getSiteSettings().then((value) => checkSite(value));
 // check website + run removal script for website
 
 function checkSite(settings: settingsManagement.siteSettings) {
+    debug('checking site with settings : ', settings);
+    
     const url: string = window.location.href;
 
     for (const site of site_list) {
         if (site.checkSite(url) && settings[site.siteKey]) {
+            debug('valid site detected! : ', site);
             site.eradicate(document);
         }
     }
