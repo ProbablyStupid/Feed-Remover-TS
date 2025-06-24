@@ -1,6 +1,6 @@
 @echo off
 
-npm install
+call npm install
 
 if not exist dist mkdir dist
 
@@ -13,6 +13,6 @@ robocopy img dist\img
 
 echo Building Typescript
 
-npx esbuild src/content-script.ts --bundle --outfile=dist/content.js --target=es6 --sourcemap
+call npx esbuild src/content-script.ts --bundle --outfile=dist/content.js --target=es6 --sourcemap
 
 echo Build finished!
