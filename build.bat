@@ -1,5 +1,7 @@
 @echo off
 
+npm install
+
 if not exist dist mkdir dist
 
 echo Copying Resources!
