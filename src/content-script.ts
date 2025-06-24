@@ -27,9 +27,12 @@ function checkSite(settings: settingsManagement.siteSettings) {
     const url: string = window.location.href;
 
     for (const site of site_list) {
+        debug('checking site', site);
         if (site.checkSite(url) && settings[site.siteKey]) {
             debug('valid site detected! : ', site);
             site.eradicate(document);
+        } else {
+            debug('not detected site: ', site);
         }
     }
 

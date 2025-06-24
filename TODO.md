@@ -16,3 +16,8 @@
 
 ### Misc
 - [ ] Make custom logo for Feed Remover TS
+
+
+
+
+- [ ] Maybe refactor the code to not pass around the Document element (it's all just one giant content script anyway).
