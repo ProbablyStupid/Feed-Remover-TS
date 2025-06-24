@@ -5,6 +5,19 @@ import type {siteSettings} from "../util/settings-management";
 export class Youtube extends sm.Site {
 
     checkSite(url: string): boolean {
+
+        /**
+         * This method will likely expand a lot in the future.
+         * 
+         * 1. In a channel, the videos shorts and live tabs get removed.
+         * 2. The Subscription page gets eradicated too.
+         * 
+         * I ultimately want to allow fine grained control over what you want to
+         * see and what not. This is meant to be a tool for productivity and
+         * minimizing distraction caused by social media feeds.
+         */
+
+
         const urlpattern = "youtube";
 
         return url.includes(urlpattern);
