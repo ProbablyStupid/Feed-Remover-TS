@@ -1,8 +1,8 @@
-import * as sm from "./site-manager";
 import * as eradicator from "./eradicator";
 import type {siteSettings} from "../util/settings-management";
+import { Site } from "./site-manager";
 
-export class Youtube extends sm.Site {
+export class Youtube extends Site {
 
     checkSite(url: string): boolean {
 
